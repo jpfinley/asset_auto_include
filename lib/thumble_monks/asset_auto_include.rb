@@ -11,8 +11,8 @@ module ThumbleMonks
       self.asset_autoinclude_options = {}
       asset_autoinclude_options[:asset_glob_patterns] = %w[controller %s %s-* *-%s *-%s-*]
       asset_autoinclude_options[:autoinclude_subdir] = "app"
-      asset_autoinclude_options[:js_autoinclude_full_path] = Pathname.new("#{RAILS_ROOT}/public/javascripts/#{asset_autoinclude_options[:autoinclude_subdir]}")
-      asset_autoinclude_options[:css_autoinclude_full_path] = Pathname.new("#{RAILS_ROOT}/public/stylesheets/#{asset_autoinclude_options[:autoinclude_subdir]}")
+      asset_autoinclude_options[:js_autoinclude_full_path] = Pathname.new("#{Rails.root.to_s}/public/javascripts/#{asset_autoinclude_options[:autoinclude_subdir]}")
+      asset_autoinclude_options[:css_autoinclude_full_path] = Pathname.new("#{Rails.root.to_s}/public/stylesheets/#{asset_autoinclude_options[:autoinclude_subdir]}")
 
       def javascript_auto_include_tags
         files = autoloadable_files(asset_autoinclude_options[:js_autoinclude_full_path], "js")
